@@ -26,4 +26,4 @@ As a user I should be able to:
 [] handle event listener
 [] assign button
 [] rerender recipe, ingredient list, instructions, image and button
->>>>>>> c043ddb2b825910d792f6cafee210f2cc777d2ae
+>>>>>>> 
