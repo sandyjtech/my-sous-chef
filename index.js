@@ -6,7 +6,7 @@ const options = {
 		'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
 	}
 };
-
+async function getRecipes() {
 try {
 	const response = await fetch(url, options);
 	const result = await response.text();
@@ -14,3 +14,5 @@ try {
 } catch (error) {
 	console.error(error);
 }
+}
+getRecipes()
