@@ -38,7 +38,6 @@ const checkboxes = document.querySelectorAll('input[type=checkbox])') //select a
 //Event Listeners
 
 //need to change hover to an event listener vs in CSS
-
 closedBook.addEventListener('click', openRecipe)//not sure if that's right?
 
 
