@@ -31,7 +31,9 @@ const glutenFree = document.querySelector('#64465')
 const dairyFree = document.querySelector('#64463')
 const form = document.querySelector('#dietary-form')
 const closedBook = document.querySelector('.book')
-const checkboxes = document.querySelectorAll('input[type=checkbox])') //select all checkboxes with the type=checkbox 
+const checkboxes = document.querySelectorAll('input[type=checkbox])') 
+
+//select all checkboxes with the type=checkbox 
 
 //Render Function
 
@@ -73,22 +75,3 @@ checkboxes.forEach(function(checkbox) { //adding an event listener to each check
 //Initializers
 
 
-
-/*
-<label>
-	<input type="checkbox" id="64469" name="vegetarian" value="Vegetarian">
-	Vegetarian
-</label>
-<label>
-	<input type="checkbox" id="64468 " name="vegan" value="Vegan">
-	Vegan
-</label>
-<label>
-	<input type="checkbox" id="64465 " name="gluten_free" value="gluten-Free">
-	Gluten Free
-</label>
-<label>
-	<input type="checkbox" id="64463 " name="dairy_free" value="dairy-Free">
-	Dairy Free
-</label>
-*/
