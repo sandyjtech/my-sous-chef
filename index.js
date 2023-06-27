@@ -41,3 +41,33 @@ const checkboxes = document.querySelectorAll('input[type=checkbox])')
 
 //need to change hover to an event listener vs in CSS
 closedBook.addEventListener('click', openRecipe)//not sure if that's right?
+
+/Event Handlers
+function openRecipe() {
+	e.preventDefault()
+	// remove hidden class
+	form.classList.remove("dietary-form"); //wait don't we want to have it hidden first? and the reveal  when they click the book?
+	//create recipe container elements
+	let img = document.createElement("img");
+	let recipeHeader = document.createElement("h2");
+	let ingredientsList = document.createElement("ul");
+	let ingredientsTitle = document.createElement("h3")
+    let eachIngredient = document.createElement("li");
+
+	ingredientsTitle.appendChild()
+	recipeContainer.appendChild()
+
+}
+
+//After page loads
+checkboxes.forEach(function(checkbox) { //adding an event listener to each checkbox
+	checkbox.addEventListener('change', function() {
+		enabledDietary =
+		Array.from(checkboxes) //converts checkboxes to an array to use filter and map
+		.filter(i => i.checked) //Array.filter to removed unchecked checkboxes
+		.map(i => i.value) // Array.map to extract only the checkbox values from the array
+	})
+}) //we don't want prevent default do we? we want the page to refresh with the newly selected dietary choice
+
+
+//Initializers
