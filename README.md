@@ -27,3 +27,42 @@ As a user I should be able to:
 [] assign button
 [] rerender recipe, ingredient list, instructions, image and button
 >>>>>>> 
+Colors-
+background: #f3efef
+headers and button: #f3efef
+paragraph text: #302f31
+https://huemint.com/website-1/#palette=f3efef-302f31-e93837
+
+
+Fonts-
+My Sous Chef: Ubuntu Condensed
+https://fonts.google.com/specimen/Ubuntu+Condensed
+other headers: Vollkorn
+https://fonts.google.com/specimen/Vollkorn
+paragraph text: Pridi
+https://fonts.google.com/specimen/Pridi
+
+
+Hover animation:
+https://codepen.io/Podgro/pen/yeEqPW
+-only the slight turn on the hover
+
+
+Click animation on book opening:
+https://codepen.io/dhanishgajjar/pen/bjaYYo
+-but not on hover on click event
+
+
+Radio dials/keys:
+
+
+name: "dairy_free"
+display_name: "Dairy-Free"
+id: 64463
+type: "dietary"
+
+
+name: "vegan"
+display_name: "Vegan"
+id: 64468
+type: "dietary"
