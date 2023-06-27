@@ -18,18 +18,19 @@ body {
 
   }
   #icon {
-    margin-bottom: -18%;
-    padding: 2% 2%;
-  }
+    width:4%;
+      }
   #header {       
     animation: header 3s ease 2s 1 normal forwards; 
     color: #E93837;
     filter: drop-shadow(0.5px 1px 0.5px #e93837);
     font-family: 'Ubuntu Condensed', sans-serif;
-    font-size: 80px;
-    margin-top: -9em;
-    padding: 5em;
-    text-shadow:  #e93837 2px 0 3px;     
+    font-size: 80px;  
+    padding: 3px;
+    text-shadow:  #e93837 2px 0 3px;  
+    margin-top: -8em; 
+  width: 100%;	
+ 
   }
   @keyframes header {
 	0% {
@@ -76,13 +77,14 @@ body {
 		transform: translateY(0px);
 	}
 }
-.book {
-    text-align: center;
+.book {    
+  position: relative;
     transform-style: preserve-3d;    
-    height: 325px;
-    width: 100px;
-    left: 50%;
-    position: absolute;
+    height: 350px;
+    width: 125px;
+    left: -45%;   
+    top: 1; 
+    bottom: 5%;   
     cursor: pointer;
     backface-visibility: visible;
     box-shadow: 0 1em 3em 0 #540909;
@@ -174,4 +176,34 @@ body {
   .book:hover .back {
     transform: rotateY(-20deg) scale(1.1);
   }
+  /* #dietary-form{
+   
+  } */
+  .dietary-form {
+    visibility: hidden;
+  }
+  #container {
+    position: fixed;
+    left: 40%;
+    bottom: 2%;     
+
+  }
+  /* #recipe-container{
+
+} */
+#recipe-container img{
+  float: right;
+} 
+#recipe-container p{
+  word-break: break-all;
+} 
+   
+   #checkbox-text {
+  font-size: larger;
+  font-family: 'Pridi', serif;
+  font-weight: bold;
+  text-align: center;
+ bottom: 3px;
   
+   
+  } 
