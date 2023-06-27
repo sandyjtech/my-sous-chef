@@ -11,22 +11,32 @@
 <body>
     
     <h1 id="header"><img src="./chef.png" alt="Chef" width="30%" id="icon">My Sous Chef </h1>
-
-
-    <div id="container">     
-        <div class="book">
-            <div class="back"></div>
-            <div class="page6"></div>
-            <div class="page5"></div>
-            <div class="page4"></div>
-            <div class="page3"></div>
-            <div class="page2"></div>
-            <div class="page1"></div>
-            <div class="front"></div>
-          </div>
-
-    <!-- place checkbox below here please -->
+    <div class="book">
+      <div class="back"></div>
+      <div class="page6"></div>
+      <div class="page5"></div>
+      <div class="page4"></div>
+      <div class="page3"></div>
+      <div class="page2"></div>
+      <div class="page1"></div>
+      <div class="front"></div>
     </div>
+
+    <div id="container">    
+
+  <!-- place checkbox below here please -->
+        <form id="dietary-form">
+    <input type="checkbox" id="64469" name="vegetarian" value="Vegetarian">
+    <label for="vegetarian">Vegetarian</label>
+    <input type="checkbox" id="64468 " name="vegan" value="Vegan">
+    <label for="vegan">Vegan</label>
+     <input type="checkbox" id="64465 " name="gluten_free" value="Gluten-Free">
+     <label for="gluten_free">Gluten-Free</label>
+     <input type="checkbox" id="64463 " name="dairy_free" value="Dairy-Free">
+     <label for="dairy_free ">Dairy-Free</label>   
+  </form>
+  <div id="recipe-container"></div>
+  </div>
 </body>
 </html>
 
