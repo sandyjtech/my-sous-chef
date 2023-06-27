@@ -1,4 +1,5 @@
 //Global variables
+const enabledDietary = []
 
 //Fetch Request and Function
 const myApiKey= process.env.RAPID_API_KEY;
@@ -30,19 +31,23 @@ const glutenFree = document.querySelector('#64465')
 const dairyFree = document.querySelector('#64463')
 const form = document.querySelector('#dietary-form')
 const closedBook = document.querySelector('.book')
+const checkboxes = document.querySelectorAll('input[type=checkbox])') //select all checkboxes with the type=checkbox 
 
 //Render Function
 
 //Event Listeners
 
-form.addEventListener('change', dietary)//not sure if that's right either
-book.addEventListener('click', openRecipe)//not sure if that's right?
+//need to change hover to an event listener vs in CSS
+
+closedBook.addEventListener('click', openRecipe)//not sure if that's right?
+
+
 
 //Event Handlers
 function openRecipe() {
 	e.preventDefault()
-	// remove hidden classs
-	form.classList.remove("dietary-form");
+	// remove hidden class
+	form.classList.remove("dietary-form"); //wait don't we want to have it hidden first? and the reveal  when they click the book?
 	//create recipe container elements
 	let img = document.createElement("img");
 	let recipeHeader = document.createElement("h2");
@@ -54,13 +59,37 @@ function openRecipe() {
 	recipeContainer.appendChild()
 
 }
-//After page load
-function dietary() {
-	e.preventDefault()
-	
-	//not sure how to handle, need to look up checkbox handling and wait for render function
-}
+
+//After page loads
+checkboxes.forEach(function(checkbox) { //adding an event listener to each checkbox
+	checkbox.addEventListener('change', function() {
+		enabledDietary =
+		Array.from(checkboxes) //converts checkboxes to an array to use filter and map
+		.filter(i => i.checked) //Array.filter to removed unchecked checkboxes
+		.map(i => i.value) // Array.map to extract only the checkbox values from the array
+	})
+}) //we don't want prevent default do we? we want the page to refresh with the newly selected dietary choice
 
 
 //Initializers
 
+
+
+/*
+<label>
+	<input type="checkbox" id="64469" name="vegetarian" value="Vegetarian">
+	Vegetarian
+</label>
+<label>
+	<input type="checkbox" id="64468 " name="vegan" value="Vegan">
+	Vegan
+</label>
+<label>
+	<input type="checkbox" id="64465 " name="gluten_free" value="gluten-Free">
+	Gluten Free
+</label>
+<label>
+	<input type="checkbox" id="64463 " name="dairy_free" value="dairy-Free">
+	Dairy Free
+</label>
+*/
