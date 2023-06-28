@@ -96,7 +96,7 @@ body {
     width: 250px;
     height: 100%;
     top: 0; left: 0;
-    transform-origin: left center;
+    transform-origin: left center;  
     transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
   }
   
@@ -172,10 +172,14 @@ body {
     transform: rotateY(-50deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
   }
-  
+  .book:hover .page6 {
+    position: rotateY(-50deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 #540909;
+  }
   .book:hover .back {
     transform: rotateY(-20deg) scale(1.1);
   }
+  
   /* #dietary-form{
    
   } */
