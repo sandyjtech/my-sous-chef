@@ -29,7 +29,7 @@ As a user I should be able to:
 >>>>>>> 
 Colors-
 background: #f3efef
-headers and button: #f3efef
+headers and button: #e93837
 paragraph text: #302f31
 https://huemint.com/website-1/#palette=f3efef-302f31-e93837
 

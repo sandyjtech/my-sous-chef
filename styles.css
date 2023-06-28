@@ -137,45 +137,48 @@ position: relative;
 .page6 {
   background: #fdfdfd;
 }
-
-.book:hover .front {
+.book:hover {
+  transform: scale(1.2);
+}
+.open .front {
   transform: rotateY(-160deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page1 {
+.open  .page1 {
   transform: rotateY(-150deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page2 {
+.open .page2 {
   transform: rotateY(-30deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page3 {
+.open .page3 {
   transform: rotateY(-140deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page4 {
+.open .page4 {
   transform: rotateY(-40deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page5 {
+.open .page5 {
   transform: rotateY(-130deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .page6 {
+.open .page6 {
   transform: rotateY(-50deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #540909;
 }
 
-.book:hover .back {
+.open .back {
   transform: rotateY(-20deg) scale(1.1);
 }
+
 /* #dietary-form{
  
 } */
@@ -209,3 +212,14 @@ bottom: 3px;
 #recipe-img {
   width: 25%;
 }
+
+h2, h3, h4 {
+  font-family: 'Vollkorn';
+  color: #e93837;
+}
+
+ul, p, li {
+  font-family: 'Pridi';
+  color: #302f31;
+}
+
