@@ -34,6 +34,7 @@ const reviewForm = document.querySelector('#review-form')
 	let instructionsName = document.createElement("p")
     let eachIngredient = document.createElement("li");
 	let ingredient = document.createElement("h4");
+	let randomRecipeButton = document.createElement("button");
 
 //select all checkboxes with the type=checkbox 
 
@@ -88,7 +89,8 @@ function displayRecipe(recipesArray) {
 	recipeContainer.appendChild(eachIngredient)
 	recipeContainer.appendChild(instructions)
 	recipeContainer.appendChild(instructionsName)
-
+	randomRecipeButton.textContent = "Random Recipe";
+	recipeContainer.appendChild(randomRecipeButton)
 }
 function submitReview() {
 	reviewForm.addEventListener('submit', function(e) {
@@ -129,4 +131,6 @@ async function getRecipes() {
   //total_time_minutes, 
   //yields serviens size
   //video_url
+
+
 
