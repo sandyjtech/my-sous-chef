@@ -25,14 +25,19 @@
     <div id="container">    
       <div id="recipe-container"></div>
   <!-- place checkbox below here please -->
-  <form id="review-form"></form>
-  <label for="review">Leave you review here.</label>
-<input type="text" name="review" value="review" placeholder="Enter text here"></input>
+  <form id="review-form">
 
-<input type="submit" name="submit"></input>
+  <label for="name">Name:
+  <input type="text" name="name"  placeholder="Enter name here" autocomplete="off"/>
+</label><br><br>
+  <label for="review">Review:
+  <input type="text" name="review" placeholder="Enter review here" autocomplete="off"/>
+</label><br><br>
+<input type="submit" value="Submit Review">
+
 </form>
 
-  
+<div id="review-container"></div>
   </div>
 </body>
 </html>
