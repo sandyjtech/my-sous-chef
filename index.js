@@ -1,7 +1,4 @@
-//Global variables
-
 //Fetch Request and Function
-//const myApiKey= process.env.RAPID_API_KEY;
 const url = 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes';
 
 const options = {
@@ -15,14 +12,8 @@ const options = {
 //DOM Elements
 const container = document.getElementById("container")
 const recipeContainer = document.getElementById("recipe-container");
-const vegetarian = document.getElementById('64469')
-const vegan = document.getElementById('64468')
-const glutenFree = document.getElementById('64465')
-const dairyFree = document.getElementById('64463')
-//const form = document.getElementById('dietary-form')
 const book = document.querySelector('.book')
 const reviewForm = document.querySelector('#review-form')
-//const checkboxes = document.querySelectorAll('input[type="checkbox"]') 
 
 //Create Global Elements//create recipe container elements
 	let img = document.createElement("img");
@@ -35,31 +26,38 @@ const reviewForm = document.querySelector('#review-form')
     let eachIngredient = document.createElement("li");
 	let ingredient = document.createElement("h4");
 	let randomRecipeButton = document.createElement("button");
-let reviewDiv = document.querySelector("#review-container")
-//select all checkboxes with the type=checkbox 
+    let reviewDiv = document.querySelector("#review-container")
+
 
 //Event Listeners
-
-//need to change hover to an event listener vs in CSS
-//closedBook.addEventListener('click', displayRecipe)
+book.addEventListener('click', function() {
+	openBook();
+	getRecipes();
+})
+book.addEventListener("mouseover", function() {
+	book.style.transform = "scale(1.2)"
+})//ADDED
+book.addEventListener("mouseout", function() {
+	book.style.transform = "scale(1)"
+})
 book.addEventListener('click', getRecipes)
 
 //Render Function
 function renderRecipes(recipesArray) {
 	recipesArray.forEach(displayRecipe)
-
 }
 //Event Handlers
+function openBook() {
+    book.classList.add("open")	
+  }
 function displayRecipe(recipe) {			
 	 // Select a random recipe
 	 //let randomRecipe = recipe[Math.floor(Math.random() * recipe.length)];
 	//Assign each elements to variables
-
 	img.src = recipe.thumbnail_url;
-    img.alt = recipe.name;
-    receipe.textContent = "Recipe";
-    receipeName.textContent = receipe.name;
-	eachIngredient.textContent = "Ingredients";
+    img.alt = recipe.name;    
+    receipeName.textContent = recipe.name;
+	ingredientsList.textContent = "Ingredients";
 	eachIngredient.textContent = "Ingredients are blaaaaaaa"; //where are the ingredients
 	instructions.textContent = "Instructions";
 	
@@ -79,12 +77,9 @@ function displayRecipe(recipe) {
 	recipe.instructions[3].display_text
 
 	//Append elements to container
-
-
 	recipeContainer.appendChild(receipe)
 	recipeContainer.appendChild(img)
 	recipeContainer.appendChild(receipeName)
-
 	ingredientsList.appendChild(eachIngredient);
 	recipeContainer.appendChild(ingredientsList)
 	recipeContainer.appendChild(eachIngredient)
@@ -95,11 +90,9 @@ function displayRecipe(recipe) {
 }
 function submitReview() {
 	reviewForm.addEventListener("submit", function (event) {
-		event.preventDefault();
-			
+		event.preventDefault();			
 	const name = event.target.name.value;
 	const newReview = event.target.review.value;
-
 		//Create Review Section		
 		let reviewName = document.createElement("h3");
 		let review = document.createElement("p");
@@ -109,23 +102,7 @@ function submitReview() {
 		reviewDiv.append(review);
 		console.log(`name: ${name}, review: ${newReview}`)
 	}); 
-	
-
 }
-
-//After page loads
-// checkboxes.forEach(function(checkbox) { //adding an event listener to each checkbox
-// 	checkbox.addEventListener('change', function(e) {
-// 		enabledDietary => { 
-// 			Array.from(checkboxes) //converts checkboxes to an array to use filter and map
-// 			.filter(i => i.checked) //Array.filter to removed unchecked checkboxes
-// 			.map(i => i.value) // Array.map to extract only the checkbox values from the array
-// }
-//         if (e.target.value === "vegetarian") {
-			
-// 		})
-// }) //we don't want prevent default do we? we want the page to refresh with the newly selected dietary choice
-
 
 //Initializers
 async function getRecipes() {
@@ -133,21 +110,18 @@ async function getRecipes() {
 	  const response = await fetch(url, options);
 	  const responseData = await response.json(); // Parse response as JSON
 	  const recipesArray = responseData.results; // Extract the 'results' array from the response data
-	renderRecipes(recipesArray);
-	
-	//displayRecipe(recipesArray)
-	  //console.log(recipesArray);
+	renderRecipes(recipesArray);	
 	} catch (error) {
 	  console.error(error);
 	}
   }  
   submitReview();
-//getRecipes()
 
 
   //total_time_minutes, 
-  //yields serviens size
+  //yields servings size
   //video_url
+
 
 
 
