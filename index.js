@@ -1,9 +1,9 @@
 //Global variables
-const enabledDietary = [];
 
 //Fetch Request and Function
 //const myApiKey= process.env.RAPID_API_KEY;
-const url = 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=1&tags=under_30_minutes';
+const url = 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes';
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -35,7 +35,7 @@ const reviewForm = document.querySelector('#review-form')
     let eachIngredient = document.createElement("li");
 	let ingredient = document.createElement("h4");
 	let randomRecipeButton = document.createElement("button");
-
+let reviewDiv = document.querySelector("#review-container")
 //select all checkboxes with the type=checkbox 
 
 //Event Listeners
@@ -47,35 +47,36 @@ book.addEventListener('click', getRecipes)
 //Render Function
 function renderRecipes(recipesArray) {
 	recipesArray.forEach(displayRecipe)
+
 }
 //Event Handlers
-function displayRecipe(recipesArray) {			
-//console.log(recipesArray)
-	// remove hidden classs
-	//form.classList.remove("dietary-form");
-	
+function displayRecipe(recipe) {			
+	 // Select a random recipe
+	 //let randomRecipe = recipe[Math.floor(Math.random() * recipe.length)];
 	//Assign each elements to variables
-	img.src = recipesArray.thumbnail_url;
-	img.alt = recipesArray.name;
-	receipe.textContent = "Recipe";
-	receipeName.textContent = recipesArray.name;
+
+	img.src = recipe.thumbnail_url;
+    img.alt = recipe.name;
+    receipe.textContent = "Recipe";
+    receipeName.textContent = receipe.name;
 	eachIngredient.textContent = "Ingredients";
 	eachIngredient.textContent = "Ingredients are blaaaaaaa"; //where are the ingredients
 	instructions.textContent = "Instructions";
+	
 	//loop through instructions
-	// for (let i = 0; i < recipesArray.instructions.length; i++) {
-    //     instructionsName.textContent = recipesArray.instructions[i].display_text
+	// for (let i = 0; i < recipe.instructions.length; i++) {
+    //     instructionsName.textContent = recipe.instructions[i].display_text
     // }
     // //loop through ingredients
-    // for (let i = 0; i < recipesArray.ingredients.length; i++) {
-    //     ingredient.textContent = recipesArray.ingredients[i].text
+    // for (let i = 0; i < recipe.ingredients.length; i++) {
+    //     ingredient.textContent = recipe.ingredients[i].text
     // }
 	//ask Lantz is this what works? 
 
-	instructionsName.textContent = recipesArray.instructions[0].display_text + 
-	recipesArray.instructions[1].display_text + 
-	recipesArray.instructions[2].display_text + 
-	recipesArray.instructions[3].display_text
+	instructionsName.textContent = recipe.instructions[0].display_text + 
+	recipe.instructions[1].display_text + 
+	recipe.instructions[2].display_text + 
+	recipe.instructions[3].display_text
 
 	//Append elements to container
 
@@ -93,11 +94,25 @@ function displayRecipe(recipesArray) {
 	recipeContainer.appendChild(randomRecipeButton)
 }
 function submitReview() {
-	reviewForm.addEventListener('submit', function(e) {
-		e.preventDefault();
-		console.log(e.target)
+	reviewForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+			
+	const name = event.target.name.value;
+	const newReview = event.target.review.value;
+
+		//Create Review Section		
+		let reviewName = document.createElement("h3");
+		let review = document.createElement("p");
+        reviewName.innerText = name;
+        review.innerText = newReview;
+		reviewDiv.append(reviewName);
+		reviewDiv.append(review);
+		console.log(`name: ${name}, review: ${newReview}`)
 	}); 
+	
+
 }
+
 //After page loads
 // checkboxes.forEach(function(checkbox) { //adding an event listener to each checkbox
 // 	checkbox.addEventListener('change', function(e) {
@@ -119,13 +134,15 @@ async function getRecipes() {
 	  const responseData = await response.json(); // Parse response as JSON
 	  const recipesArray = responseData.results; // Extract the 'results' array from the response data
 	renderRecipes(recipesArray);
+	
 	//displayRecipe(recipesArray)
-	  console.log(recipesArray);
+	  //console.log(recipesArray);
 	} catch (error) {
 	  console.error(error);
 	}
   }  
-  //getRecipes()
+  submitReview();
+//getRecipes()
 
 
   //total_time_minutes, 
