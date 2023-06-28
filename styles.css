@@ -29,8 +29,7 @@ body {
     padding: 3px;
     text-shadow:  #e93837 2px 0 3px;  
     margin-top: -8em; 
-  width: 100%;	
- 
+  width: 100%;	 
   }
   @keyframes header {
 	0% {
@@ -88,8 +87,7 @@ body {
     cursor: pointer;
     backface-visibility: visible;
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
+  }  
   .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
     transform-style: preserve-3d;
     position: absolute;
@@ -98,118 +96,89 @@ body {
     top: 0; left: 0;
     transform-origin: left center;  
     transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
-  }
-  
+  }  
   .front, .back {
     background:  #e93837;
-  }
-  
+  }  
   .front, .page1, .page3, .page5 {
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
-  }
-  
+  }  
   .back, .page2, .page4, .page6 {
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
-  }
-  
+  }  
   .page1 { 
     background: #efefef;
-  }
-  
+  }  
   .page2 {
     background: #efefef;
-  }
-  
+  }  
   .page3 {
     background: #f5f5f5;
-  }
-  
+  }  
   .page4 {
     background: #f5f5f5;
-  }
-  
+  }  
   .page5 {
     background: #fafafa;
-  }
-  
+  }  
   .page6 {
     background: #fdfdfd;
+  }  
+  .book:hover {
+    transform: scale(1.2);
   }
-  
-  .book:hover .front {
+  .open .front {
     transform: rotateY(-160deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page1 {
+  }  
+  .open  .page1 {
     transform: rotateY(-150deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page2 {
+  }  
+  .open  .page2 {
     transform: rotateY(-30deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page3 {
+  }  
+  .open .page3 {
     transform: rotateY(-140deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page4 {
+  }  
+  .open  .page4 {
     transform: rotateY(-40deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page5 {
+  }  
+  .open  .page5 {
     transform: rotateY(-130deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  
-  .book:hover .page6 {
+  }  
+  .open  .page6 {
     transform: rotateY(-50deg) scale(1.1);
     box-shadow: 0 1em 3em 0 #540909;
-  }
-  .book:hover .page6 {
-    position: rotateY(-50deg) scale(1.1);
-    box-shadow: 0 1em 3em 0 #540909;
-  }
-  .book:hover .back {
+  }  
+  .open  .back {
     transform: rotateY(-20deg) scale(1.1);
   }
-  
-  /* #dietary-form{
-   
-  } */
-  /* .dietary-form {
-    visibility: hidden;
-  } */
   #container {
     position: fixed;
     left: 40%;
-    bottom: 2%;     
-
+    bottom: 2%;   
   }
-  /* #recipe-container{
-
-} */
 #recipe-container img{
   float: right;
 } 
 #recipe-container p{
   word-break: break-all;
-} 
-   
-   /* #checkbox-text {
-  font-size: larger;
-  font-family: 'Pridi', serif;
-  font-weight: bold;
-  text-align: center;
- bottom: 3px;  
-   
-  }  */
+}    
   #recipe-img {
     width: 25%;
+  }
+h2, h3, h4 {
+    font-family: 'Vollkorn';
+    color: #e93837;
+  }
+  ul, p, li {
+    font-family: 'Pridi';
+    color: #302f31;
   }
