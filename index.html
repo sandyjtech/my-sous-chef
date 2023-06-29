@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300&family=Ubuntu+Condensed&family=Vollkorn:wght@500&display=swap" rel="stylesheet">
-    <script defer type="text/javascript" href="./index.js"></script>
+    <script defer type="text/javascript" src="./index.js"></script>
   </head>
 
 <body>
@@ -23,27 +23,22 @@
     </div>
 
     <div id="container">    
-
+      <div id="recipe-container"></div>
   <!-- place checkbox below here please -->
-   <form id="dietary-form">
- 	 <label id="checkbox-text">  
- 		<input type="checkbox" id="64469" name="vegetarian" value="Vegetarian">
-		Vegetarian
-	</label>
-	 <label id="checkbox-text"> 
-    	<input type="checkbox" id="64468 " name="vegan" value="Vegan">
-		Vegan
-	</label>
-	 <label id="checkbox-text"> 
-    	<input type="checkbox" id="64465 " name="gluten_free" value="Gluten-Free">
-		Gluten-Free
-	</label>
-	 <label id="checkbox-text"> 
-    	<input type="checkbox" id="64463 " name="dairy_free" value="Dairy-Free">
-		Dairy-Free
-	</label>    
-  </form>
-  <div id="recipe-container"></div>
+  <form id="review-form">
+
+  <label for="name">Name:
+  <input type="text" name="name"  placeholder="Enter name here" autocomplete="off"/>
+</label><br><br>
+  <label for="review">Review:
+  <textarea type="text" name="review" placeholder="Enter review here" autocomplete="off" cols="40"
+  rows="10"></textarea>
+</label><br><br>
+<input type="submit" value="Submit Review">
+
+</form>
+
+<div id="review-container"></div>
   </div>
 </body>
 </html>
