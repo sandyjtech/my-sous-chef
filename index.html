@@ -5,12 +5,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300&family=Ubuntu+Condensed&family=Vollkorn:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer type="text/javascript" src="./index.js"></script>
   </head>
 
 <body>
     
-    <h1 id="header"><img src="./chef.png" alt="Chef" width="30%" id="icon">My Sous Chef </h1>
+    <h1 id="header"><img src="./chef.png" alt="Chef" id="icon">My Sous Chef </h1>
     <div class="book">
       <div class="back"></div>
       <div class="page6"></div>
@@ -25,14 +26,29 @@
     <div id="container">    
       <div id="recipe-container"></div>
   <!-- place checkbox below here please -->
-  <form id="review-form"></form>
-  <label for="review">Leave you review here.</label>
-<input type="text" name="review" value="review" placeholder="Enter text here"></input>
 
-<input type="submit" name="submit"></input>
+  <form id="review-form" class="hidden">
+
+  <label for="name">Name:
+  <input type="text" name="name"  placeholder="Enter name here" autocomplete="off"/>
+</label><br><br>
+  <label for="review">Review:
+  <textarea type="text" name="review" placeholder="Enter review here" autocomplete="off" cols="27"
+  rows="10">
+</textarea>
+</label><br><br>
+
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+
+<input type="submit" value="Submit Review" id="form-button">
+
 </form>
 
-  
+<div id="review-container"></div>
   </div>
 </body>
 </html>
