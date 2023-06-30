@@ -21,15 +21,20 @@ let img = document.createElement("img");
 img.setAttribute("id", "recipe-img");
 let receipe = document.createElement("h2");
 let receipeName = document.createElement("h3");
+receipeName.setAttribute("id", "recipe-name");
 let ingredientsList = document.createElement("ul");
 let instructions = document.createElement("h4");
 let instructionsName = document.createElement("p");
-let instructionContainer = document.createElement("div");
+let instructionContainer = document.createElement("ol");
 instructionContainer.setAttribute("id", "instruction-container");
 let randomRecipeButton = document.createElement("button");
 randomRecipeButton.setAttribute("id", "random-button");
 let reviewDiv = document.querySelector("#review-container");
 let starSpan = document.querySelectorAll(".fa")
+const recipeVideo = document.createElement("video");
+const recipeVideoSrc = document.createElement("source")
+recipeVideo.setAttribute("id", "video");
+
 //Event Listeners
 book.addEventListener("click", function () {
   openBook();
@@ -43,18 +48,15 @@ book.addEventListener("mouseout", function () {
 });
 book.addEventListener("click", getRecipes);
 
-
 // Render Function
 function renderRecipes(recipesArray) {
   recipe = recipesArray; // Assign the recipesArray to the global recipe variable
   recipesArray.forEach(displayRecipe);
 }
-
 //Event Handlers
 function openBook() {
   book.classList.add("open");
 }
-
 function displayRecipe(recipe) {
   reviewForm.classList.remove("hidden");  
  
@@ -67,19 +69,29 @@ function displayRecipe(recipe) {
   //Assign each elements to variables
   img.src = recipe.thumbnail_url;
   img.alt = recipe.name;
-  receipeName.textContent = recipe.name;
+  receipe.textContent = recipe.name;
  
   instructions.textContent = "Instructions";
-  instructionsName.textContent = recipe.instructions[0].display_text +
-  recipe.instructions[1].display_text +
-  recipe.instructions[2].display_text +
-  recipe.instructions[3].display_text
-
+  instructionContainer.innerHTML = ""; // Clear previous instructions
+  
+  recipe.instructions.forEach((instruction) => {
+	let eachInstruction = document.createElement("li");
+	eachInstruction.textContent = instruction.display_text;
+	instructionContainer.appendChild(eachInstruction);
+  });  
+  recipeVideo.controls = true;
+  recipeVideo.muted = false;
+  recipeVideo.height = 240;
+  recipeVideo.width = 320
+  recipeVideoSrc.src = recipe.video_url;
+  recipeVideo.appendChild(recipeVideoSrc)
+  console.log(recipeVideoSrc.src)
+  
   //Append elements to container
   recipeContainer.appendChild(receipe);
   recipeContainer.appendChild(img);
   recipeContainer.appendChild(receipeName);
-  instructionContainer.appendChild(instructions);
+
   instructionContainer.appendChild(instructionsName);
   recipeContainer.appendChild(ingredientsList);
   recipeContainer.appendChild(instructionContainer);
@@ -134,7 +146,6 @@ starSpan.forEach((star) => {
 });
 }
 
-
 //Initializers
 async function getRecipes() {
   try {
@@ -142,7 +153,7 @@ async function getRecipes() {
     const responseData = await response.json(); // Parse response as JSON
     const recipesArray = responseData.results;
     // Extract the 'results' array from the response data
-    console.log(recipesArray);
+
     renderRecipes(recipesArray);
   } catch (error) {
     console.error(error);
