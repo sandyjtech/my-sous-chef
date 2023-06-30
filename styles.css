@@ -21,250 +21,268 @@ body {
 #icon {
   width:10%;
     }
-#header {       
-  /*animation: header 3s ease 2s 1 normal forwards; */
-  color: #E93837;
-  /*filter: drop-shadow(0.5px 1px 0.5px #e93837);*/
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 80px;  
+#icon {
+  min-width: 10%;
+  max-width: 10%;
+}
+#header {
+  animation: header 2s ease 2s 1 normal forwards;
+  color: #e93837;
+  filter: drop-shadow(0.5px 1px 0.5px #e93837);
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 80px;
   padding: 3px;
-  /*text-shadow:  #e93837 2px 0 3px;*/
-  margin-top: 2%; 
- width: 100%;	 
+  text-shadow: #e93837 2px 0 3px;
+  margin-top: 2%;
+  width: 100%;
 }
 @keyframes header {
-0% {
-  animation-timing-function: ease-in;
-  opacity: 1;
-  transform: translateY(-65px);
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateY(-65px);
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    animation-timing-function: ease-in;
+    transform: translateY(-35px);
+  }
+  65% {
+    animation-timing-function: ease-in;
+    transform: translateY(-12px);
+  }
+  82% {
+    animation-timing-function: ease-in;
+    transform: translateY(-6px);
+  }
+  93% {
+    animation-timing-function: ease-in;
+    transform: translateY(-4px);
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+  100% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
-
-24% {
-  opacity: 1;
-}
-
-40% {
-  animation-timing-function: ease-in;
-  transform: translateY(-35px);
-}
-
-65% {
-  animation-timing-function: ease-in;
-  transform: translateY(-12px);
-}
-
-82% {
-  animation-timing-function: ease-in;
-  transform: translateY(-6px);
-}
-
-93% {
-  animation-timing-function: ease-in;
-  transform: translateY(-4px);
-}
-
-25%,
-55%,
-75%,
-87% {
-  animation-timing-function: ease-out;
-  transform: translateY(0px);
-}
-
-100% {
-  animation-timing-function: ease-out;
-  opacity: 1;
-  transform: translateY(0px);
-}
-}
-.book {    
-  transform-style: preserve-3d;    
+.book {
+  transform-style: preserve-3d;
   height: 350px;
   width: 125px;
-  margin-left: 50%;   
-  margin-top: 5em; 
-  margin-bottom: 20%;   
+  margin-left: 50%;
+  margin-top: 5em;
+  margin-bottom: 5em;
   cursor: pointer;
   backface-visibility: visible;
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+}
+.front,
+.back,
+.page1,
+.page2,
+.page3,
+.page4,
+.page5,
+.page6 {
   transform-style: preserve-3d;
   position: absolute;
   width: 250px;
   height: 100%;
-  top: 0; left: 0;
-  transform-origin: left center;  
-  transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
-}  
-.front, .back {
-  background:  #e93837;
-}  
-.front, .page1, .page3, .page5 {
-  border-bottom-right-radius: .5em;
-  border-top-right-radius: .5em;
-}  
-.back, .page2, .page4, .page6 {
-  border-bottom-right-radius: .5em;
-  border-top-right-radius: .5em;
-}  
-.page1 { 
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.35s ease-in-out;
+}
+.front,
+.back {
+  background: #e93837;
+}
+.front,
+.page1,
+.page3,
+.page5 {
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+.back,
+.page2,
+.page4,
+.page6 {
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+.page1 {
   background: #efefef;
-}  
+}
 .page2 {
   background: #efefef;
-}  
+}
 .page3 {
   background: #f5f5f5;
-}  
+}
 .page4 {
   background: #f5f5f5;
-}  
+}
 .page5 {
   background: #fafafa;
-}  
+}
 .page6 {
   background: #fdfdfd;
-}  
+}
 .book:hover {
   transform: scale(1.2);
 }
 .open .front {
   transform: rotateY(-160deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .page1 {
+}
+.open .page1 {
   transform: rotateY(-150deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .page2 {
+}
+.open .page2 {
   transform: rotateY(-30deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
+}
 .open .page3 {
   transform: rotateY(-140deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .page4 {
+}
+.open .page4 {
   transform: rotateY(-40deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .page5 {
+}
+.open .page5 {
   transform: rotateY(-130deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .page6 {
+}
+.open .page6 {
   transform: rotateY(-50deg) scale(1.1);
   box-shadow: 0 1em 3em 0 #6a0c0c;
-}  
-.open  .back {
+}
+.open .back {
   transform: rotateY(-20deg) scale(1.1);
 }
 #container {
-display:grid;   
-
+  display: grid;
 }
-#recipe-container{
+#recipe-container {
   border: #302f31 dotted 2px;
   background-color: #302f31;
   border-radius: 5px;
-  margin: 5%;
-  
+  margin:5em 2em;
 }
-#recipe-container img{
-float: right;
-} 
-#recipe-container p{
-word-break: break-all;
+#recipe-container img {
+  float: right;
+}
+#recipe-container p {
+  word-break: break-all;
+}
 
-}    
 #recipe-img {
-  width: 40%;   
-  margin: 5%;
+  width: 35%;
+  margin: 0 2em;
 }
-h2, h3, h4, h5, ul {
-  font-family: 'Vollkorn', serif;
-  color:#E93837;
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Vollkorn";
+  color: #e93837;
 }
-h3{
+#recipe-name {
   font-size: 1.5em;
+  margin-left: 30%;
 }
-h4{
+h4 {
   font-size: 1.2em;
 }
-#instruction-container{
-  margin: 10% 2%;
+#instruction-container {
+  margin: 3em 2% 3em 2%;
 }
- p, li {
-  font-family: 'Pridi';
+ul {
+  color: #e93837;
+  margin: 3em 2% 3em 2%; 
+}
+ul,
+p,
+li {
+  font-family: "Pridi";
   color: #f3efef;
   text-align: left;
 }
 
-#review-form{
-width: 50%;
-margin: 5% auto;
-font-family: 'Pridi', serif;
-color: #E93837;
-font-weight: bolder;
-background-color: #f3efef;
-border: #540909 dotted 3px;
-border-radius: 5px;
-overflow-wrap: break-word
-
+#review-form {
+  width: 50%;
+  margin: 5% auto;
+  font-family: "Pridi", serif;
+  color: #e93837;
+  font-weight: bolder;
+  background-color: #f3efef;
+  border: #540909 dotted 3px;
+  border-radius: 5px;
+  overflow-wrap: break-word;
 }
-#review-container{   
-  font-family: 'Pridi', serif;   
+#review-container {
+  font-family: "Pridi", serif;
   overflow: scroll;
   overflow-wrap: break-word;
-  display:table-cell;
-  vertical-align:middle;
-  text-align:center;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
-.review-card{    
-  font-family: 'Pridi', serif;
+.review-card {
+  font-family: "Pridi", serif;
   border: #302f31 solid 2px;
-  border-radius: 3%; 
-  margin: 2% auto; 
- padding: 2%;
- text-align: left;
- overflow-wrap: break-word;
-
+  border-radius: 3%;
+  margin: 2% auto;
+  padding: 2%;
+  text-align: left;
+  overflow-wrap: break-word;
 }
-.hidden{
-visibility: hidden;
+.hidden {
+  visibility: hidden;
 }
-#random-button{
-background-color:#e93737;
-border-radius:28px;
-border:1px solid #e93737;
-display:inline-block;
-cursor:pointer;
-color:#f3efef;
-font-family:'Vollkorn', serif;
-font-size:17px;
-font-weight:bold;
-margin-bottom: 2%;
-padding:16px 31px;
-text-decoration:none;
-text-shadow:0px 1px 0px #6a0c0c;
+#random-button {
+  background-color: #e93737;
+  border-radius: 28px;
+  border: 1px solid #e93737;
+  display: inline-block;
+  cursor: pointer;
+  color: #f3efef;
+  font-family: "Vollkorn", serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 2%;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #6a0c0c;
 }
 #form-button {
-background-color:#e93737;
-border-radius:28px;
-border:1px solid #e93737;
-display:inline-block;
-cursor:pointer;
-color:#f3efef;
-font-family:'Vollkorn', serif;
-font-size:17px;
-font-weight:bold;
-margin-bottom: 2%;
-padding:16px 31px;
-text-decoration:none;
-text-shadow:0px 1px 0px #6a0c0c;
+  background-color: #e93737;
+  border-radius: 28px;
+  border: 1px solid #e93737;
+  display: inline-block;
+  cursor: pointer;
+  color: #f3efef;
+  font-family: "Vollkorn", serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 2%;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #6a0c0c;
 }
 
 .checked {
-color: orange;
+  color: orange;
 }
