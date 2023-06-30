@@ -1,29 +1,53 @@
-# my-sous-chef
+# MY SOUS CHEF
 
-As a user I should be able to:
+##Introduction
 
-1. Get a random recipe generated for me by clicking on the book
-[] basic HTML frame with any ids we need for each section
-[] create Fetch
-[] basic CSS frame
-[] add Event Listeners: click, hover, filter
-[] Handle Event Listener by calling a detail render function
-[] Select appropriate elements
-[] assign data to elements
-[] e.prevent default
+##Table of Contents
 
-2. Filter if I'm vegetarian, vegan, gluten-free, dairy-free
- wait for API
 
-3. See the randomly generated recipe with recipe name, ingredient list, instructions, and image.
-[] add scroll function
-[] render recipe, ingredient list, instructions, and image
-[] rerender open book
+-###Requirements
 
-4. If I dont like the recipe shown I can click on a button at the bottom to generate a differnt recipe.
-[] create button
-[] add Event Listener: click
-[] handle event listener
-[] assign button
-[] rerender recipe, ingredient list, instructions, image and button
->>>>>>> 
+This module requires the following modules:
+
+- [Views](https://www.drupal.org/project/views)
+- [Panels](https://www.drupal.org/project/panels)
+
+- ### Recommended modules
+
+[Markdown filter](https://www.drupal.org/project/markdown): When enabled,
+display of the project's README.md help will be rendered with markdown.
+- ###Installation
+- ###Configuration
+- ### Troubleshooting
+
+If the menu does not display, check the following:
+
+- Are the "Access administration menu" and "Use the administration pages and
+  help" permissions enabled for the appropriate roles?
+- Does html.tpl.php of your theme output the `$page_bottom` variable?
+- ### FAQ
+
+**Q: I want to prevent robots from indexing my custom error pages by
+setting the robots meta tag in the HTML head to "noindex".**
+
+**A:** There is no need to. **Customerror** returns the correct HTTP
+status codes (403 and 404). This will prevent robots from indexing the
+error pages.
+
+**Q: I want to customize the custom error template output.**
+
+**A:** In your theme template folder for your site, copy the template
+provided by the **Customerror** module
+(i.e. `templates/customerror.html.twig`) and then make your
+modifications there.
+
+**Q: I want to have a different template for my 404 and 403 pages.**
+
+**A:** Copy `customerror.html.twig` to
+`customerror--404.html.twig` and `customerror--403.html.twig`. You
+do not need a `customerror.html.twig` for this to work.
+- ### Maintainers
+
+- Daniel F. Kudwien - [sun](https://www.drupal.org/u/sun)
+- Peter Wolanin - [pwolanin](https://www.drupal.org/u/pwolanin)
+
