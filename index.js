@@ -27,8 +27,9 @@ let instructionsName = document.createElement("p");
 let instructionContainer = document.createElement("div");
 instructionContainer.setAttribute("id", "instruction-container");
 let randomRecipeButton = document.createElement("button");
-let video = document.createElement("video")
-//video.setAttribute('id', )
+const recipeVideo = document.createElement("video");
+const recipeVideoSrc = document.createElement("source")
+recipeVideo.setAttribute("id", "video")
 randomRecipeButton.setAttribute("id", "random-button");
 let reviewDiv = document.querySelector("#review-container");
 let starSpan = document.querySelectorAll(".fa")
@@ -77,6 +78,15 @@ function displayRecipe(recipe) {
   recipe.instructions[2].display_text +
   recipe.instructions[3].display_text
 
+
+  recipeVideo.controls = true;
+  recipeVideo.muted = false;
+  recipeVideo.height = 240;
+  recipeVideo.width = 320
+  recipeVideoSrc.src = recipe.video_url;
+  recipeVideo.appendChild(recipeVideoSrc)
+  console.log(recipeVideoSrc.src)
+
   //Append elements to container
   recipeContainer.appendChild(receipe);
   recipeContainer.appendChild(img);
@@ -85,9 +95,11 @@ function displayRecipe(recipe) {
   instructionContainer.appendChild(instructionsName);
   recipeContainer.appendChild(ingredientsList);
   recipeContainer.appendChild(instructionContainer);
+  recipeContainer.appendChild(recipeVideo)
   randomRecipeButton.textContent = "Another Recipe";
   recipeContainer.appendChild(randomRecipeButton);
   return (randomIndex = Math.floor(Math.random() * recipe.length));
+  
 }
 randomRecipeButton.addEventListener("click", generateRandomRecipe);
 
