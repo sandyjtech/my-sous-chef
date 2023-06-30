@@ -86,7 +86,7 @@ function displayRecipe(recipe) {
   recipeVideoSrc.src = recipe.video_url;
   recipeVideo.appendChild(recipeVideoSrc)
   console.log(recipeVideoSrc.src)
-  
+
   //Append elements to container
   recipeContainer.appendChild(receipe);
   recipeContainer.appendChild(img);
@@ -95,7 +95,7 @@ function displayRecipe(recipe) {
   instructionContainer.appendChild(instructionsName);
   recipeContainer.appendChild(ingredientsList);
   recipeContainer.appendChild(instructionContainer);
-  randomRecipeButton.textContent = "Random Recipe";
+  randomRecipeButton.textContent = "Another Recipe";
   recipeContainer.appendChild(randomRecipeButton);
   return (randomIndex = Math.floor(Math.random() * recipe.length));
 }
@@ -164,5 +164,3 @@ submitReview();
 //total_time_minutes,
 //yields servings size
 //video_url
-
-
