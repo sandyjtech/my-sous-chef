@@ -1,109 +1,53 @@
-# my-sous-chef
+# MY SOUS CHEF
 
-As a user I should be able to:
+##Introduction
 
-1. Get a random recipe generated for me by clicking on the book
-[] basic HTML frame with any ids we need for each section
-[] create Fetch
-[] basic CSS frame
-[] add Event Listeners: click, hover, filter
-[] Handle Event Listener by calling a detail render function
-[] Select appropriate elements
-[] assign data to elements
-[] e.prevent default
-
-2. Filter if I'm vegetarian, vegan, gluten-free, dairy-free
- wait for API
-
-3. See the randomly generated recipe with recipe name, ingredient list, instructions, and image.
-[] add scroll function
-[] render recipe, ingredient list, instructions, and image
-[] rerender open book
-
-4. If I dont like the recipe shown I can click on a button at the bottom to generate a differnt recipe.
-[] create button
-[] add Event Listener: click
-[] handle event listener
-[] assign button
-[] rerender recipe, ingredient list, instructions, image and button
->>>>>>> 
-Colors-
-background: #f3efef
-headers and button: #f3efef
-paragraph text: #302f31
-https://huemint.com/website-1/#palette=f3efef-302f31-e93837
+##Table of Contents
 
 
-Fonts-
-My Sous Chef: Ubuntu Condensed
-https://fonts.google.com/specimen/Ubuntu+Condensed
-other headers: Vollkorn
-https://fonts.google.com/specimen/Vollkorn
-paragraph text: Pridi
-https://fonts.google.com/specimen/Pridi
+-###Requirements
 
-////////
+This module requires the following modules:
 
-1st page book: 
-https://codepen.io/poulamic/pen/RwrKqmb
+- [Views](https://www.drupal.org/project/views)
+- [Panels](https://www.drupal.org/project/panels)
 
-Hover animation:
-https://codepen.io/HighFlyer/pen/LaXrgV
-or 
-https://codepen.io/brunokbza/pen/rgxbEp
+- ### Recommended modules
 
-Click animation of book opening:
-https://codepen.io/dhanishgajjar/pen/bjaYYo
+[Markdown filter](https://www.drupal.org/project/markdown): When enabled,
+display of the project's README.md help will be rendered with markdown.
+- ###Installation
+- ###Configuration
+- ### Troubleshooting
 
-I don't think we need this but this is cute if we need a loading symbol: https://codepen.io/ryanmclaughlin/pen/XJopVe
+If the menu does not display, check the following:
 
+- Are the "Access administration menu" and "Use the administration pages and
+  help" permissions enabled for the appropriate roles?
+- Does html.tpl.php of your theme output the `$page_bottom` variable?
+- ### FAQ
 
-Since we're doing dinner this is the universal key we should use: display_name:"Dinner"
-id:64486
-type:"meal"
-name:"dinner"
+**Q: I want to prevent robots from indexing my custom error pages by
+setting the robots meta tag in the HTML head to "noindex".**
 
+**A:** There is no need to. **Customerror** returns the correct HTTP
+status codes (403 and 404). This will prevent robots from indexing the
+error pages.
 
-Radio dials/keys:
+**Q: I want to customize the custom error template output.**
 
-id:64469
-type:"dietary"
-name:"vegetarian"
-display_name:"Vegetarian"
+**A:** In your theme template folder for your site, copy the template
+provided by the **Customerror** module
+(i.e. `templates/customerror.html.twig`) and then make your
+modifications there.
 
-id:64468
-type:"dietary"
-name:"vegan"
-display_name:"Vegan"
+**Q: I want to have a different template for my 404 and 403 pages.**
 
-id:64465
-type:"dietary"
-name:"gluten_free"
-display_name:"Gluten-Free"
+**A:** Copy `customerror.html.twig` to
+`customerror--404.html.twig` and `customerror--403.html.twig`. You
+do not need a `customerror.html.twig` for this to work.
+- ### Maintainers
 
-name:"dairy_free"
-display_name:"Dairy-Free"
-id:64463
-type:"dietary"
+- Daniel F. Kudwien - [sun](https://www.drupal.org/u/sun)
+- Peter Wolanin - [pwolanin](https://www.drupal.org/u/pwolanin)
 
-///the follow are other ones we can use if we want, 
-
-id:3801552
-type:"dietary"
-name:"pescatarian"
-display_name:"Pescatarian"
-
-id:5285641
-type:"dietary"
-name:"contains_alcohol"
-display_name:"Contains Alcohol"
-
-id:64467
-type:"dietary"
-name:"low_carb"
-display_name:"Low-Carb"
-
-id:64466
-type:"dietary"
-name:"healthy"
-display_name:"Healthy"
