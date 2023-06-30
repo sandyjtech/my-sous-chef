@@ -22,54 +22,16 @@ body {
   max-width: 10%;
 }
 #header {
-  animation: header 3s ease 2s 1 normal forwards;
   color: #e93837;
-  filter: drop-shadow(0.5px 1px 0.5px #e93837);
+  /*filter: drop-shadow(0.5px 1px 0.5px #e93837);*/
   font-family: "Ubuntu Condensed", sans-serif;
   font-size: 80px;
   padding: 3px;
-  text-shadow: #e93837 2px 0 3px;
+  /*text-shadow: #e93837 2px 0 3px;*/
   margin-top: 2%;
   width: 100%;
 }
-@keyframes header {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 1;
-    transform: translateY(-65px);
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    animation-timing-function: ease-in;
-    transform: translateY(-35px);
-  }
-  65% {
-    animation-timing-function: ease-in;
-    transform: translateY(-12px);
-  }
-  82% {
-    animation-timing-function: ease-in;
-    transform: translateY(-6px);
-  }
-  93% {
-    animation-timing-function: ease-in;
-    transform: translateY(-4px);
-  }
-  25%,
-  55%,
-  75%,
-  87% {
-    animation-timing-function: ease-out;
-    transform: translateY(0px);
-  }
-  100% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
+
 .book {
   transform-style: preserve-3d;
   height: 350px;
@@ -170,6 +132,7 @@ body {
 }
 #container {
   display: grid;
+ 
 }
 #recipe-container {
   border: #302f31 dotted 2px;
@@ -208,8 +171,9 @@ h4 {
 ul {
   color: #e93837;
   margin: 3em 2% 3em 2%; 
+  font-family: "Vollkorn";
+  text-align: left;
 }
-ul,
 p,
 li {
   font-family: "Pridi";
@@ -239,6 +203,7 @@ li {
 .review-card {
   font-family: "Pridi", serif;
   border: #302f31 solid 2px;
+  background-color: #302f31;
   border-radius: 3%;
   margin: 2% auto;
   padding: 2%;
@@ -281,4 +246,15 @@ li {
 
 .checked {
   color: orange;
+}
+
+#book-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  color: #000;
+
+}
+#recipe-video{
+  margin: 0 auto;
+  
 }
