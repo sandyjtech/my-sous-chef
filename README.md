@@ -1,6 +1,6 @@
 # MY SOUS CHEF
 
-![My SOUS CHEF](https://github.com/arbitrary-berry/my-sous-chef/blob/main/My%20Sous%20Chef%20demo.mov)
+![8bdbcfe7-a692-4cb5-a484-5ddfac3417e1](https://github.com/sandyjtech/my-sous-chef/assets/128105913/3237c74e-488b-4dd5-a20c-1d321a5fadfb)
 
 ## Introduction
 
@@ -21,6 +21,7 @@ If you don't like the recipe, feel free to click on the "Another Recipe" button.
 ## Roadmap
 
 Ideas for future releases:
+
 
 - Add more accessibility by adding a checkbox and filtering for Vegetarian, Vegan, Dairy-Free, and Gluten-Free. *See below for keys*
 - Have the review form preload the name of the recipe you're reviewing.
